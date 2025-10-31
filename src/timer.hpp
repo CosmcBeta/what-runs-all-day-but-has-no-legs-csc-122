@@ -1,3 +1,16 @@
-#include <string>
+#pragma once
 
-std::string pretty_print();
+#include <chrono>
+
+class Timer
+{
+public:
+    Timer() = default;
+
+    void start();
+    void stop();
+    int elapsed();
+
+private:
+    std::chrono::time_point<std::chrono::system_clock> startTime_, endTime_;
+};
